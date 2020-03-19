@@ -51,14 +51,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="npY-1w-iws" userLabel="pText">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="npY-1w-iws" userLabel="pText">
                                 <rect key="frame" x="60" y="314" width="255" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="6I5-Ak-w3W"/>
                                     <constraint firstAttribute="height" constant="34" id="6S9-Gm-yw8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htJ-WS-Wg4">
                                 <rect key="frame" x="72" y="388" width="51" height="30"/>
@@ -143,25 +143,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="444"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qPu-sd-p8G">
-                                                    <rect key="frame" x="15" y="11" width="345" height="323"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qPu-sd-p8G">
+                                                    <rect key="frame" x="8" y="8" width="345.5" height="399.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="399.5" id="53x-eK-GdI"/>
+                                                        <constraint firstAttribute="width" secondItem="qPu-sd-p8G" secondAttribute="height" multiplier="115:133" id="aZZ-uW-tXq"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nub-8C-hTq">
-                                                    <rect key="frame" x="15" y="358" width="37" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nub-8C-hTq">
+                                                    <rect key="frame" x="8" y="415.5" width="37" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I love Jasmine &lt;3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fk-GU-JJI">
-                                                    <rect key="frame" x="69" y="358" width="133" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I love Jasmine &lt;3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fk-GU-JJI">
+                                                    <rect key="frame" x="53" y="415.5" width="133" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qPu-sd-p8G" firstAttribute="top" secondItem="1M8-jh-uqX" secondAttribute="top" constant="8" id="2if-Ut-8Dp"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2Fk-GU-JJI" secondAttribute="bottom" constant="8" id="39K-Hw-oA0"/>
+                                                <constraint firstItem="Nub-8C-hTq" firstAttribute="top" secondItem="qPu-sd-p8G" secondAttribute="bottom" constant="8" id="L9m-59-O0y"/>
+                                                <constraint firstItem="Nub-8C-hTq" firstAttribute="leading" secondItem="1M8-jh-uqX" secondAttribute="leading" constant="8" id="R6s-R1-0pz"/>
+                                                <constraint firstAttribute="trailing" secondItem="qPu-sd-p8G" secondAttribute="trailing" constant="8" id="fhM-Xt-zk7"/>
+                                                <constraint firstItem="2Fk-GU-JJI" firstAttribute="leading" secondItem="Nub-8C-hTq" secondAttribute="trailing" constant="8" id="mg0-Ak-4vH"/>
+                                                <constraint firstItem="qPu-sd-p8G" firstAttribute="leading" secondItem="1M8-jh-uqX" secondAttribute="leading" constant="8" id="njC-dy-Yka"/>
+                                                <constraint firstItem="2Fk-GU-JJI" firstAttribute="top" secondItem="qPu-sd-p8G" secondAttribute="bottom" constant="8" id="qvJ-vg-uZi"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionLabel" destination="2Fk-GU-JJI" id="g2f-3g-9a1"/>
