@@ -43,21 +43,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
     }
 }
-    
-    @IBAction func onCameraButton(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.sourceType = .camera
-        } else {
-            picker.sourceType = .photoLibrary
-        }
-        
-        present(picker, animated: true, completion: nil)
-    }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
        
@@ -69,6 +55,19 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onCameraButton(_ sender: Any) {
+        let picker = UIImagePickerController()
+               picker.delegate = self
+               picker.allowsEditing = true
+               
+               if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                   picker.sourceType = .camera
+               } else {
+                   picker.sourceType = .photoLibrary
+               }
+               
+               present(picker, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
